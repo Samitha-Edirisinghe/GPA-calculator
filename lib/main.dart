@@ -9,6 +9,8 @@ void main() {
 }
 
 class GPACalculatorApp extends StatelessWidget {
+  const GPACalculatorApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,6 +22,8 @@ class GPACalculatorApp extends StatelessWidget {
 }
 
 class InputScreen extends StatefulWidget {
+  const InputScreen({super.key});
+
   @override
   _InputScreenState createState() => _InputScreenState();
 }
@@ -93,7 +97,7 @@ class _InputScreenState extends State<InputScreen> {
           padding: EdgeInsets.all(16.0),
           child: Column(
             children: [
-              ..._courses.map((course) => _buildCourseRow(course)).toList(),
+              ..._courses.map((course) => _buildCourseRow(course)),
               ElevatedButton(
                 onPressed: _addCourse,
                 child: Text('Add Course'),
@@ -152,7 +156,7 @@ class Course {
 class ResultScreen extends StatelessWidget {
   final double gpa;
 
-  ResultScreen({required this.gpa});
+  const ResultScreen({super.key, required this.gpa});
 
   @override
   Widget build(BuildContext context) {
