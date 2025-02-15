@@ -39,7 +39,19 @@ class _InputScreenState extends State<InputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('GPA Calculator')),
+      appBar: AppBar(
+        title: Center(
+          // Wrap the Text widget in a Center widget
+          child: Text(
+            'GPA Calculator',
+            style: TextStyle(
+              fontSize: 24, // Set the font size
+              color: Colors.white, // Set the text color
+            ),
+          ),
+        ),
+        backgroundColor: Colors.blue, // Optional: Set AppBar background color
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16.0),
@@ -48,10 +60,30 @@ class _InputScreenState extends State<InputScreen> {
               ..._courses.map((course) => _buildCourseRow(course)),
               ElevatedButton(
                 onPressed: _addCourse,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue, // Button background color
+                  foregroundColor: Colors.white, // Text color
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 15, vertical: 10), // Adjust padding if needed
+                  textStyle: TextStyle(
+                    fontSize: 15, // Font size
+                    fontWeight: FontWeight.bold, // Optional: Make text bold
+                  ),
+                ),
                 child: Text('Add Course'),
               ),
               ElevatedButton(
                 onPressed: _calculateGPA,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue, // Button background color
+                  foregroundColor: Colors.white, // Text color
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 15, vertical: 10), // Adjust padding if needed
+                  textStyle: TextStyle(
+                    fontSize: 15, // Font size
+                    fontWeight: FontWeight.bold, // Optional: Make text bold
+                  ),
+                ),
                 child: Text('Calculate GPA'),
               ),
             ],
