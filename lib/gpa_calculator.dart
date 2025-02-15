@@ -1,3 +1,7 @@
+// 22UG1-0791
+// E.D.S.R.Edirisinghe
+// CCS3351 Mobile Application Development Final project Q3. GPA-calculator
+
 import 'package:final_project_q3/course.dart';
 
 class GPACalculator {
